@@ -18,7 +18,6 @@ if (isset($_GET["a"]) && isset($_GET["b"])) {
             if ($_GET["a"] != 0) {
                 // there was no errors
                 $solution = -$_GET["b"] / $_GET["a"];
-                var_dump($solution);
             } else {
                 $errors[] = "\"a\" can't be zero.";
             }
@@ -60,8 +59,12 @@ if (isset($_GET["a"]) && isset($_GET["b"])) {
         <input type="text" name="a" id="a" /> <br>
         <label for="b">b:</label>
         <input type="text" name="b" id="b" /> <br>
+        <input type="hidden" name="sent" value="true">
         <input type="submit" value="Calculate!">
     </form>
+    <?php if (isset($_GET["sent"]) && count($errors) == 0) : ?>
+        <span>Solution: <?= $solution ?></span>
+    <?php endif; ?>
 </body>
 
 </html>
