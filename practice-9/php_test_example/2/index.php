@@ -14,12 +14,19 @@ $color = "";
 //    - Set the appropriate variable(s) ($suspicious_error / $space_error / both) to the value of $ERROR_TEXT!
 // (1 point)
 
+// if the suspicious is not set and the form is sent then set suspicious error to error text
+if (!isset($_GET["suspicious"]) && isset($_GET["sent"])) $suspicious_error = $ERROR_TEXT;
+if (!isset($_GET["space"]) && isset($_GET["sent"])) $space_error = $ERROR_TEXT;
 
 // 2. If the user fills out both input fields on the form, do the following:
 //    - Sum the values of the fields on the form into the points variable after submitting the form!
 //    - Set the $color variable to the value of $COLORS[$points]!
 //    - Display the <h1> with the "color-result" id! (In all other cases, this header should not be displayed.)
 // (2 points)
+if (isset($_GET["space"]) && isset($_GET["suspicious"]) && $suspicious_error == "" && $space_error == "") {
+    $points = (int)$_GET["suspicious"] + (int)$_GET["space"];
+    $color = $COLORS[$points];
+}
 
 // 3. Use a hidden input field to check whether the form has been submitted,
 //    and only display error messages if the form has been submitted! (hidden input)
@@ -44,8 +51,10 @@ $color = "";
     <nav>
         <h1>SusFeed</h1>
     </nav>
-    <!-- h1#color-result: Csak helyesen beküldött űrlap esetén jelenik meg. -->
-    <h1 id="color-result" style="color: <?= $color ?>">You would be a(n) <?= $color ?> astronaut!</h1>
+    <!-- h1#color-result: It only appears if the form has been filled out correctly. -->
+    <?php if (isset($_GET["sent"]) && $space_error == "" && $suspicious_error == "") : ?>
+        <h1 id="color-result" style="color: <?= $color ?>">You would be a(n) <?= $color ?> astronaut!</h1>
+    <?php endif; ?>
     <h1>What color would your spacesuit be if you were an astronaut?</h1>
     <form>
         <ul>
@@ -90,6 +99,7 @@ $color = "";
                 <span class="space_error"><?= $space_error ?></span>
             </li>
         </ul>
+        <input type="hidden" name="sent" value="true" />
         <button type="submit">Evaluate</button>
     </form>
 </body>

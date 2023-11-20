@@ -56,9 +56,9 @@ if (isset($_GET["a"]) && isset($_GET["b"])) {
     <?php endif; ?>
     <form>
         <label for="a">a:</label>
-        <input type="text" name="a" id="a" /> <br>
+        <input type="text" name="a" id="a" value="<?= $_GET["a"] ?? "" ?>" /> <br>
         <label for="b">b:</label>
-        <input type="text" name="b" id="b" /> <br>
+        <input type="text" name="b" id="b" value="<?= $_GET["b"] ?? "" ?>" /> <br>
         <input type="hidden" name="sent" value="true">
         <input type="submit" value="Calculate!">
     </form>

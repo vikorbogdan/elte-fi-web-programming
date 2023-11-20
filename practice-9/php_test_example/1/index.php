@@ -28,11 +28,23 @@ $users = [
 ];
 
 // 1. Retrieve the search term from the GET Parameters! (1 point)
-
+$keyword = "";
+if (isset($_GET["search"])) {
+    $keyword = $_GET["search"];
+}
 // 2. If a search term is specified in the URL, list only those users whose names contain the search term!
 //    The search should be case-insensitive.
 //    (Hint: You can use the str_contains and strtolower functions for the solution.) (1 point)
 // For example, the term "fo" should list the users "Mr Fox" and "Fox".
+$filtered_users = [];
+
+foreach ($users as $user) {
+    // if the user name contains the search keyword
+    if (str_contains(strtolower($user["name"]), strtolower($keyword))) {
+        // put the user "record" in the filtered users array
+        $filtered_users[] = $user;
+    }
+}
 
 // 3. If no query is specified in the url (No GET parameters), list all users on the page! (1 point)
 // (By clicking on the FaceVuk Title in the navigation bar)
@@ -66,10 +78,16 @@ $users = [
     </nav>
     <ul id="results">
         <!-- Example for expected output (You can delete this part) -->
-        <li class="result">
+        <!-- <li class="result">
             <img src="https://images.unsplash.com/photo-1560809451-9e77c2e8214a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80">
             <h2>Example user</h2>
-        </li>
+        </li> -->
+        <?php foreach ($filtered_users as $user) : ?>
+            <li>
+                <img src="<?= $user["img"] ?>" alt="">
+                <h2><?= $user["name"] ?></h2>
+            </li>
+        <?php endforeach; ?>
     </ul>
 </body>
 

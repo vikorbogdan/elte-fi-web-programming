@@ -9,6 +9,7 @@
 // (For example, using <b> tags!)
 // It's advisable to use the "substr()" function for this solution.
 
+$data = json_decode(file_get_contents("data.json"), true);
 
 ?>
 <!DOCTYPE html>
@@ -28,10 +29,12 @@
             <th>Title of the Book (title)</th>
             <th>Release Date of the Book (release_date)</th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
+        <?php foreach ($data as $book) : ?>
+            <tr>
+                <td><?= $book["title"] ?></td>
+                <td><?= $book["release_date"] ?></td>
+            </tr>
+        <?php endforeach; ?>
     </table>
 </body>
 
