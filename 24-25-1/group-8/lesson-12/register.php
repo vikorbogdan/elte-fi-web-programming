@@ -12,6 +12,10 @@
             width: 300px;
             gap: 10px;
         }
+
+        #error {
+            color: red;
+        }
     </style>
 </head>
 
@@ -28,6 +32,9 @@
         <label for="reindeer">How many reindeers do you have? 🦌</label>
         <input placeholder="10" name="reindeer" type="number">
         <input type="submit" value="Sign up! 🎅">
+        <?php if (isset($_SESSION["registration_error_msg"])) : ?>
+            <div id="error"><?= $_SESSION["registration_error_msg"] ?></div>
+        <?php endif; ?>
     </form>
 </body>
 

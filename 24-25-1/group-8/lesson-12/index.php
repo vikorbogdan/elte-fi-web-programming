@@ -1,8 +1,5 @@
 <?php
-
 $santas = json_decode(file_get_contents("users.json"), true);
-
-
 ?>
 
 <!DOCTYPE html>

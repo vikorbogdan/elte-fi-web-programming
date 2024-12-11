@@ -1,30 +1,49 @@
 <?php
+session_start();
+include_once "../util.php";
+function on_success($username, $password, $reindeer)
+{
+    $santas = read_json();
 
-// On success:
-// Redirect back to the login page, Successful registration message
+    $new_santa = [
+        "username" => $username,
+        "password" => $password,
+        "number_of_deers" => (int)$reindeer
+    ];
 
-// On error:
-// Redirect back to the register page, and show form errors (Validate input)
+    $santas[] = $new_santa;
+
+    write_json($santas);
+    redirect("../login.php?success=true");
+}
+
+function on_error($message)
+{
+    $_SESSION["registration_error_msg"] = $message;
+    redirect("../register.php");
+}
 
 
 $username = $_POST["username"];
 $password = $_POST["password"];
+$password_again = $_POST["password_again"];
 $reindeer = $_POST["reindeer"];
 
-$santas = json_decode(
-    file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/users.json"),
-    true
-);
+$error_message = "";
 
-$new_santa = [
-    "username" => $username,
-    "password" => $password,
-    "number_of_deers" => (int)$reindeer
-];
-
-$santas[] = $new_santa;
-
-file_put_contents(
-    $_SERVER["DOCUMENT_ROOT"] . "/users.json",
-    json_encode($santas, JSON_PRETTY_PRINT)
-);
+if (isset($username) && trim($username) != "") {
+    if (isset($password) && trim($password) != "" && isset($password_again) && trim($password_again) != "") {
+        if ($password == $password_again) {
+            on_success($username, $password, $reindeer);
+        } else {
+            $error_message = "Passwords don't match.";
+            on_error($error_message);
+        }
+    } else {
+        $error_message = "Please provide a password, and password again.";
+        on_error($error_message);
+    }
+} else {
+    $error_message = "Please provide a username";
+    on_error($error_message);
+}
