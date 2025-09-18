@@ -1,7 +1,5 @@
 <?php
-
 $santas = json_decode(file_get_contents("santas.json"), true);
-
 
 ?>
 

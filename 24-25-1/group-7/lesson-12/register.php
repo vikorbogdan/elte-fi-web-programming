@@ -1,8 +1,4 @@
 <?php
-$error_code = null;
-if (isset($_GET["error_code"])) {
-    $error_code = $_GET["error_code"];
-}
 
 ?>
 
@@ -30,6 +26,10 @@ if (isset($_GET["error_code"])) {
             width: fit-content;
             margin-left: auto;
         }
+
+        #error {
+            color: red;
+        }
     </style>
 </head>
 
@@ -39,11 +39,6 @@ if (isset($_GET["error_code"])) {
     <h1>
         Sign up as a Santa! 🎅
     </h1>
-    <?php if ($error_code == 1): ?>
-        <div style="color: red;">
-            Password Mismatch!
-        </div>
-    <?php endif ?>
     <form method="POST" action="queries/register_query.php">
         <label for="name">Name</label>
         <input type="text" name="name" id="name">
@@ -55,6 +50,9 @@ if (isset($_GET["error_code"])) {
         <input type="number" name="reindeers" id="reindeers">
         <label for="age">How old are you Santa?</label>
         <input type="number" name="age" id="age">
+        <div id="error">
+            <?= isset($_SESSION["error_msg_register"]) ? $_SESSION["error_msg_register"] : "" ?>
+        </div>
         <input type="submit" value="Sign me up! 🎁">
     </form>
 </body>

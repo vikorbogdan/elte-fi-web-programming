@@ -22,16 +22,34 @@
             width: fit-content;
             margin-left: auto;
         }
+
+        #success {
+            background-color: darkseagreen;
+            border: 2px solid green;
+            border-radius: 15px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
     </style>
 </head>
 
 <body>
     <?php include_once "layout/navigate.php" ?>
+    <?php if (isset($_GET["success"])): ?>
+        <div id="success">
+            Successful registration!
+            <a href="login.php">Dismiss</a>
+        </div>
+    <?php endif; ?>
     <form method="POST" action="queries/login_query.php">
         <label for="name">What's your name?</label>
         <input type="text" name="name">
         <label for="name">Password</label>
-        <input type="text" name="password">
+        <input type="password" name="password">
         <input type="submit" value="Let me log in!">
     </form>
 </body>

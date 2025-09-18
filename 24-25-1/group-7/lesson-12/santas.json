@@ -1,164 +1,44 @@
 [
-    {
-        "name": "Santa Claus North",
-        "age": 1200,
-        "reindeers": 8,
-        "password": "RudolphRocks_12North!Sleigh"
-    },
-    {
-        "name": "Mikul\u00e1s",
-        "age": 2024,
-        "reindeers": 0,
-        "password": "HungaryIsSweet_2024!NoReindeer"
-    },
-    {
-        "name": "Santa Claus South",
-        "age": 1100,
-        "reindeers": 6,
-        "password": "KoalaCocoa_6South#Jolly"
-    },
-    {
-        "name": "Santa Claus West",
-        "age": 950,
-        "reindeers": 9,
-        "password": "SierraSleigh!WestWaves_9"
-    },
-    {
-        "name": "Santa Claus East",
-        "age": 1300,
-        "reindeers": 7,
-        "password": "DragonFireEast#WinterSunrise!"
-    },
-    {
-        "name": "Santa Claus Alpine",
-        "age": 750,
-        "reindeers": 10,
-        "password": "Yodeler!AlpinePeak#Snowflakes"
-    },
-    {
-        "name": "Santa Claus Forest",
-        "age": 1450,
-        "reindeers": 8,
-        "password": "WoodlandWhispers_Forest_1450!"
-    },
-    {
-        "name": "Santa Claus Arctic",
-        "age": 1600,
-        "reindeers": 12,
-        "password": "NorthernLights_ArcticX12!"
-    },
-    {
-        "name": "Santa Claus Desert",
-        "age": 900,
-        "reindeers": 5,
-        "password": "CactusSleigh#DesertHeat5!"
-    },
-    {
-        "name": "Santa Claus Tropical",
-        "age": 1100,
-        "reindeers": 4,
-        "password": "PalmTreeSleigh!Tropics4Ever"
-    },
-    {
-        "name": "Santa Claus Midnight",
-        "age": 1350,
-        "reindeers": 6,
-        "password": "MidnightMoon_Xmas#6Stars"
-    },
-    {
-        "name": "Santa Claus Oceanic",
-        "age": 1400,
-        "reindeers": 11,
-        "password": "WaveRider_11Ocean@Santa"
-    },
-    {
-        "name": "Santa Claus Highland",
-        "age": 800,
-        "reindeers": 7,
-        "password": "HighlandHiker_7Mistletoe!"
-    },
-    {
-        "name": "Santa Claus Sky",
-        "age": 1500,
-        "reindeers": 9,
-        "password": "Cloud9_Reindeer!Sky5000"
-    },
-    {
-        "name": "Santa Claus Valley",
-        "age": 1250,
-        "reindeers": 10,
-        "password": "ValleyVibes!10DeerChristmas"
-    },
-    {
-        "name": "Santa Claus Mountain",
-        "age": 1150,
-        "reindeers": 8,
-        "password": "MountainEcho!SleighRide8"
-    },
-    {
-        "name": "Santa Claus Plains",
-        "age": 1000,
-        "reindeers": 7,
-        "password": "PlainsGlide!7SnowDrifts"
-    },
-    {
-        "name": "Deda Mraz",
-        "password": "1234",
-        "reindeers": "123",
-        "age": "123"
-    },
-    {
-        "name": "T\u00e9lap\u00f3",
-        "password": "12345",
-        "reindeers": "30",
-        "age": "30"
-    },
-    {
-        "name": "G\u00e9za",
-        "password": "gezawokcso",
-        "reindeers": "4",
-        "age": "70"
-    },
-    {
-        "name": "G\u00e9za",
-        "password": "asd",
-        "reindeers": "4",
-        "age": "70"
-    },
-    {
-        "name": "G\u00e9za",
-        "password": "asd",
-        "reindeers": "4",
-        "age": "70"
-    },
-    {
-        "name": "G\u00e9za",
-        "password": "4567",
-        "reindeers": "4",
-        "age": "123"
-    },
-    {
-        "name": "123",
-        "password": "123",
-        "reindeers": "1234",
-        "age": "1234"
-    },
-    {
-        "name": "",
-        "password": "123",
-        "reindeers": "",
-        "age": ""
-    },
-    {
-        "name": "",
-        "password": "123",
-        "reindeers": "",
-        "age": ""
-    },
-    {
-        "name": "",
-        "password": "",
-        "reindeers": "",
-        "age": ""
-    }
+  {
+    "name": "Santa Claus North",
+    "age": 1200,
+    "reindeers": 8,
+    "password": "RudolphRocks_12North!Sleigh"
+  },
+  {
+    "name": "Mikul\u00e1s",
+    "age": 2024,
+    "reindeers": 0,
+    "password": "HungaryIsSweet_2024!NoReindeer"
+  },
+  {
+    "name": "Santa Claus South",
+    "age": 1100,
+    "reindeers": 6,
+    "password": "KoalaCocoa_6South#Jolly"
+  },
+  {
+    "name": "Santa Claus West",
+    "age": 950,
+    "reindeers": 9,
+    "password": "SierraSleigh!WestWaves_9"
+  },
+  {
+    "name": "Santa Claus East",
+    "age": 1300,
+    "reindeers": 7,
+    "password": "DragonFireEast#WinterSunrise!"
+  },
+  {
+    "name": "Santa Claus Alpine",
+    "age": 750,
+    "reindeers": 10,
+    "password": "Yodeler!AlpinePeak#Snowflakes"
+  },
+  {
+    "name": "Santa Claus Forest",
+    "age": 1450,
+    "reindeers": 8,
+    "password": "WoodlandWhispers_Forest_1450!"
+  }
 ]
