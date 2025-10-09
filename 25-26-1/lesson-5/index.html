@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treasure Hunt</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        width: 60px;
+        height: 60px;
+        border: 1px solid purple;
+        text-align: center;
+        cursor: pointer;
+        font-size: 2em;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="gridSize">Enter the size of the board!</label>
+    <input type="number" name="gridSize" id="gridSize" />
+    <button id="generate">Generate board!</button>
+    <div>Number of clicks: <span id="counter">0</span></div>
+    <div id="container">
+      <table id="board">
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div id="winOverlay">YOU WON!</div>
+    <script src="script.js"></script>
+  </body>
+</html>
