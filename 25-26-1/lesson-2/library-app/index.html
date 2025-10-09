@@ -4,11 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
+    <style>
+      table * {
+        border: 1px solid black;
+      }
+      table {
+        border-collapse: collapse;
+      }
+    </style>
   </head>
   <body>
     <input type="number" name="publishYear" id="publishYear" />
     <button id="queryButton">Query</button>
     <ul id="yearQueryResults"></ul>
+    <hr />
+    <select id="publisherSelector">
+      <!-- The options are added by script -->
+    </select>
+    <div id="container"></div>
   </body>
   <script src="script.js"></script>
 </html>

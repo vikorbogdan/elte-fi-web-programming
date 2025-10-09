@@ -6,6 +6,12 @@ const books = [
     publisher: "Riverhead Books",
   },
   {
+    title: "A Thousand Splendid Suns 2",
+    author: "Khaled Hosseini",
+    yearOfPublish: 2007,
+    publisher: "Riverhead Books",
+  },
+  {
     title: "The Great Gatsby",
     author: "F. Scott Fitzgerald",
     yearOfPublish: 1925,
@@ -83,4 +89,49 @@ queryButtonElement.addEventListener("click", () => {
     // 5. Put the <li>s inside the `yearQueryResultsUlElement`
     yearQueryResultsUlElement.appendChild(listElement);
   });
+});
+
+// Second task
+
+const publisherSelectElement = document.querySelector("#publisherSelector");
+const containerDivElement = document.querySelector("#container");
+
+const usedPublishers = {};
+
+const booksWithUniquePublishers = books.filter((book) => {
+  if (usedPublishers[book.publisher]) {
+    return false;
+  }
+  usedPublishers[book.publisher] = true;
+  return true;
+});
+
+booksWithUniquePublishers.forEach((book) => {
+  const optionElement = document.createElement("option");
+  optionElement.value = book.publisher;
+  optionElement.innerText = book.publisher;
+  publisherSelectElement.appendChild(optionElement);
+});
+
+publisherSelectElement.addEventListener("change", (event) => {
+  containerDivElement.innerHTML = "";
+  const selectedPublisher = event.target.value;
+  const tableElement = document.createElement("table");
+  // <tr> Table rows - created for each book
+  // <td> Cell in a table row - created for each property
+
+  const filteredBooksByPublisher = books.filter(
+    (book) => selectedPublisher === book.publisher
+  );
+
+  filteredBooksByPublisher.forEach((book) => {
+    const tableRowElement = document.createElement("tr");
+    Object.keys(book).forEach((property) => {
+      const tableCellElement = document.createElement("td");
+      tableCellElement.innerText = book[property];
+      tableRowElement.appendChild(tableCellElement);
+    });
+    tableElement.appendChild(tableRowElement);
+  });
+  containerDivElement.appendChild(tableElement);
 });
